@@ -53,7 +53,7 @@ ZSH_THEME=agnoster
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-plugins=(sublime)
+plugins=(thefuck)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,6 +70,7 @@ DEFAULT_USER=mjuszczyk
 # else
 #   export EDITOR='mvim'
 # fi
+export BUNDLER_EDITOR='subl'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -86,11 +87,28 @@ DEFAULT_USER=mjuszczyk
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(thefuck --alias fuck)"
+alias gti="git "
 alias gs="git status"
 alias nah="git reset --hard && git clean -df"
 alias gc="git commit -m "
-alias pa="php artisan "
+alias gca="git commit --amend -m"
+alias gsu="git submodule update"
+alias gco="git checkout "
 alias gps="git push"
 alias gpl="git pull"
 alias ga.="git add ."
+alias ga="git add "
 alias gfgc="git fetch && git checkout "
+alias gb="git branch"
+alias gpsgs="git push && git status"
+alias gpsuu="git push -u upstream"
+alias subl="sublime "
+alias ns="nshift "
+alias vimzsh="vim ~/.zshrc"
+alias gplu="git pull upstream "
+alias gdw="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
+alias gcp="git cherry-pick "
+alias dcu="docker-compose up"
+alias dup="docker-sync stop; docker-sync start && docker-compose up"
+alias ddown="docker-sync stop"
+alias code.="code ."
